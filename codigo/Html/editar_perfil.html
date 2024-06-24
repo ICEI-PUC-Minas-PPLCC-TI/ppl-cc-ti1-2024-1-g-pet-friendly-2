@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/Editar_perfil.css">
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <h1 class="text-center mt-4">Editar Perfil</h1>
+            <div class="row mt-4">
+                <div class="col-md-3 text-center">
+                    <div class="foto-perfil" id="foto-perfil" onclick="editarFotoPerfil()">
+                        <p>Editar Foto</p>
+                    </div>
+                    <input type="file" id="input-foto-perfil" accept="image/*" style="display: none;">
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="editar-nome" placeholder="Editar Nome">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="editar-descricao" placeholder="Editar Descrição"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="editar-localizacao" placeholder="Editar Localização">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-3" onclick="salvarPerfil()">Salvar Perfil</button>
+            <button class="btn btn-success mt-3" data-toggle="modal" data-target="#modalAdicionarPost">Adicionar Post</button>
+            
+            <div class="row mt-4" id="posts-container">
+                <!-- Posts serão inseridos dinamicamente aqui -->
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Modal Adicionar/Editar Post -->
+    <div class="modal fade" id="modalAdicionarPost" tabindex="-1" aria-labelledby="modalAdicionarPostLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalAdicionarPostLabel">Adicionar Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="file" class="form-control" id="imagem-post" accept="image/*">
+                    <textarea class="form-control mt-3" id="descricao-post" placeholder="Descrição"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="salvarPost()">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/Editar_perfil.js"></script>
+</body>
+</html>
