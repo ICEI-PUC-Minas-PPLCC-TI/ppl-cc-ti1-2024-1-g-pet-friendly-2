@@ -1,0 +1,7 @@
+body{
+    background-image: url('../img/colagem-de-animal-de-estimacao-bonito-isolada.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Fixa a imagem durante o scroll */
+    background-position: center; /* Centraliza a imagem */
+}
