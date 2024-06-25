@@ -1,0 +1,9 @@
+{
+  "favoritos": [
+    { "nome": "Local 1", "link": "perfil_local1.html" },
+    { "nome": "Local 2", "link": "perfil_local2.html" },
+    { "nome": "Local 3", "link": "perfil_local3.html" },
+    { "nome": "Local 4", "link": "perfil_local4.html" },
+    { "nome": "Local 5", "link": "perfil_local5.html" }
+  ]
+}

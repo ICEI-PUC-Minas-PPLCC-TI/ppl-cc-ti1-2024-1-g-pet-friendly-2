@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estabelecimentos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h2>Lista de Estabelecimentos</h2>
+            <ul id="listaEstabelecimentos"></ul>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const listaEstabelecimentos = document.getElementById('listaEstabelecimentos');
+
+            function loadEstabelecimentos() {
+                const storedData = localStorage.getItem('estabelecimentos');
+                if (storedData) {
+                    const estabelecimentos = JSON.parse(storedData);
+                    console.log('Estabelecimentos carregados:', estabelecimentos); // Adicionei log para verificação
+                    estabelecimentos.forEach((estabelecimento, index) => {
+                        addEstabelecimentoToList(estabelecimento, index);
+                    });
+                } else {
+                    console.log('Nenhum estabelecimento encontrado no Local Storage.');
+                }
+            }
+
+            function saveEstabelecimentos(estabelecimentos) {
+                localStorage.setItem('estabelecimentos', JSON.stringify(estabelecimentos));
+            }
+
+            function addEstabelecimentoToList(estabelecimento, index) {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <strong>${estabelecimento.nome_fantasia}</strong> - ${estabelecimento.razao_social} (${estabelecimento.categoria})
+                    <button onclick="deleteEstabelecimento(${index})"><i class="fas fa-trash-alt"></i></button>
+                `;
+                listaEstabelecimentos.appendChild(li);
+            }
+
+            window.deleteEstabelecimento = function(index) {
+                let estabelecimentos = JSON.parse(localStorage.getItem('estabelecimentos'));
+                estabelecimentos.splice(index, 1);
+                saveEstabelecimentos(estabelecimentos);
+                listaEstabelecimentos.innerHTML = '';
+                loadEstabelecimentos();
+            }
+
+            loadEstabelecimentos();
+        });
+</script>
+</body>
+</html>

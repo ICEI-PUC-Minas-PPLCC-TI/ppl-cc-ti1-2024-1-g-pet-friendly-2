@@ -1,0 +1,17 @@
+{
+  "estabelecimento": {
+      "nome_fantasia": "",
+      "razao_social": "",
+      "categoria": "",
+      "endereco": {
+          "cep": "",
+          "uf": "",
+          "cidade": "",
+          "logradouro": "",
+          "numero": "",
+          "complemento": ""
+      },
+      "email": "",
+      "senha": ""
+  }
+}

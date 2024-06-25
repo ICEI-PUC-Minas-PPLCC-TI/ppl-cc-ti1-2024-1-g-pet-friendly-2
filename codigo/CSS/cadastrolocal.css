@@ -1,0 +1,55 @@
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px;
+}
+
+img {
+    width: 200px; 
+    margin-right: 20px;
+}
+h2 {
+    font-family: 'Itim', sans-serif; 
+}
+label {
+    font-family: 'Itim', sans-serif; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; 
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f1f1f1;
+    font-family: 'Itim', sans-serif; 
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #d3d3d3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    font-family: 'Itim', sans-serif; 
+}
