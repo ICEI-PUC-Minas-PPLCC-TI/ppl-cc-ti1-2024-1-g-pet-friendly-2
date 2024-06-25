@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body {
+    font-family: 'Itim', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    background-color: #d3d3d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.header h1 span {
+    margin-left: 10px;
+}
+
+.header img {
+    position: absolute;
+    right: 40px;
+    width: 120px;
+    height: auto;
+}
+
+.container {
+    margin-top: 20px;
+    background-color: #c4c4c4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #d3d3d3; /* Cor cinza combinando com a barra superior */
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Itim', sans-serif;
+}
+
+button:hover {
+    background-color: #b3b3b3; /* Cor cinza mais escura ao passar o mouse */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos dentro do form */
+    margin-top: 20px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Faz os inputs ocuparem toda a largura do formulário */
+    font-family: 'Itim', sans-serif; /* Aplica a fonte Itim aos inputs */
+}
+
+button[type="submit"] {
+    background-color: #d3d3d3; /* Cor cinza combinando com a barra superior */
+    margin-top: 15px; /* Adiciona uma margem superior maior */
+}
+
+button[type="submit"]:hover {
+    background-color: #b3b3b3; /* Cor cinza mais escura ao passar o mouse */
+}

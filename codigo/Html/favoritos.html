@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+    <link rel="stylesheet" href="favoritos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>FAVORITOS <span>⭐</span></h1>
+        <img src="assets/dog.png" alt="Imagem do Cão">
+    </div>
+    <div class="container">
+        <ul id="favoritos-list"></ul>
+        <form id="favoritos-form">
+            <input type="text" id="nome" placeholder="Nome do Local" required>
+            <input type="text" id="link" placeholder="Link do Local" required>
+            <button type="submit">Adicionar Favorito</button>
+        </form>
+    </div>
+
+    <script>
+        function loadFavoritos() {
+            const favoritosList = document.getElementById('favoritos-list');
+            favoritosList.innerHTML = '';
+            const favoritosData = localStorage.getItem('favoritos');
+            
+            if (favoritosData) {
+                const data = JSON.parse(favoritosData);
+                data.favoritos.forEach((favorito, index) => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.textContent = favorito.nome;
+                    a.href = favorito.link;
+                    li.appendChild(a);
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                    deleteButton.onclick = () => deleteFavorito(index);
+                    li.appendChild(deleteButton);
+                    favoritosList.appendChild(li);
+                });
+            }
+        }
+
+        function addFavorito(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const link = document.getElementById('link').value;
+            const favoritosData = localStorage.getItem('favoritos');
+            let favoritos = favoritosData ? JSON.parse(favoritosData).favoritos : [];
+            favoritos.push({ nome, link });
+            localStorage.setItem('favoritos', JSON.stringify({ favoritos }));
+            document.getElementById('favoritos-form').reset();
+            loadFavoritos();
+        }
+
+        function deleteFavorito(index) {
+            const favoritosData = localStorage.getItem('favoritos');
+            let favoritos = JSON.parse(favoritosData).favoritos;
+            favoritos.splice(index, 1);
+            localStorage.setItem('favoritos', JSON.stringify({ favoritos }));
+            loadFavoritos();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFavoritos();
+            document.getElementById('favoritos-form').addEventListener('submit', addFavorito);
+        });
+    </script>
+</body>
+</html>
